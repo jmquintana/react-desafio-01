@@ -15,20 +15,14 @@ function App() {
 
 	return (
 		<div className={styles.appContainer}>
-			<nav className={styles.navContainer}>
+			{/* <nav className={styles.navContainer}>
 				<NavBar />
 			</nav>
 			<main className={styles.mainContainer}>
 				<ItemListContainer greeting="Bienvenidos a mi tienda..." />
 			</main>
-			<ItemListContainer greeting="Bienvenido a mi tienda...">
-				{/* <form onSubmit={handleOnSubmit}>
-					<input type="text" ref={inputName} placeholder="Ingrese su nombre" />
-					<input type="text" ref={inputAge} placeholder="Ingrese su edad" />
-					<input type="submit" value="Enviar" />
-				</form> */}
-			</ItemListContainer>
-			<footer className={styles.footerContainer}>Footer</footer>
+			<ItemListContainer greeting="Bienvenido a mi tienda..."></ItemListContainer>
+			<footer className={styles.footerContainer}>Footer</footer> */}
 		</div>
 	);
 }
