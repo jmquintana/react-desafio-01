@@ -1,35 +1,36 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import NavBar from "./components/NavBar/NavBar.jsx";
+import styles from "./App.module.scss";
+import ItemListContainer from "./components/ItemListContainer/ItemListContainer.jsx";
 
 function App() {
-  const [count, setCount] = useState(0)
+	const inputName = useRef(null);
+	const inputAge = useRef(null);
 
-  return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+	const handleOnSubmit = (e) => {
+		e.preventDefault();
+		const name = inputName.current.value;
+		const age = inputAge.current.value;
+		console.log(name, age);
+	};
+
+	return (
+		<div className={styles.appContainer}>
+			<nav className={styles.navContainer}>
+				<NavBar />
+			</nav>
+			<main className={styles.mainContainer}>
+				<ItemListContainer greeting="Bienvenidos a mi tienda..." />
+			</main>
+			<ItemListContainer greeting="Bienvenido a mi tienda...">
+				{/* <form onSubmit={handleOnSubmit}>
+					<input type="text" ref={inputName} placeholder="Ingrese su nombre" />
+					<input type="text" ref={inputAge} placeholder="Ingrese su edad" />
+					<input type="submit" value="Enviar" />
+				</form> */}
+			</ItemListContainer>
+			<footer className={styles.footerContainer}>Footer</footer>
+		</div>
+	);
 }
 
-export default App
+export default App;
